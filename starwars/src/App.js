@@ -7,8 +7,8 @@ import Character from './components/Character'
 const promise = axios.get(`https://swapi.dev/api/people/`)
 promise.then((response) => {
   console.log(response.data);
-  // const card = makeCharacter(response.data);
-  // document.querySelector('.cards').appendChild(card);
+  
+  
 })
   .catch((error) => {  
     console.log('sad path', error)
