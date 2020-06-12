@@ -1,5 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import axios from 'axios';
+import Character from './components/Character'
+
+
+const promise = axios.get(`https://swapi.dev/api/people/`)
+promise.then((response) => {
+  console.log(response.data);
+  // const card = makeCharacter(response.data);
+  // document.querySelector('.cards').appendChild(card);
+})
+  .catch((error) => {  
+    console.log('sad path', error)
+});
+
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,6 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      <Character />
     </div>
   );
 }
